@@ -41,13 +41,25 @@ def wordsearch() :
     else :
         print( q , "does not exist")
     f.close()
+def occur_first():
+    word = input("enter word to find : ")
+    with open("practice.txt" , "r") as f:
+        c = f.readlines()
+        for i in c :
+            if i.find(word) != -1:
+                print("word found in",c.index(i)+1 , "line")
+                break
+        else: 
+            print("not found")
+occur_first()
 
-choice1 = str(input("select to write(w) , to swap word(e) , or to search word (s)): "))
-if choice1 == "w" or "W ":
-    writefile()
-elif choice1 == "e" or "E":
-    swapjava()
-elif choice1 == "s" or "S" :
-    wordsearch()
-else :
-    print("Error.......choose a valid option ")
+
+# choice1 = str(input("select to write(w) , to swap word(e) , or to search word (s)): "))
+# if choice1 == "w" or "W ":
+#     writefile()
+# elif choice1 == "e" or "E":
+#     swapjava()
+# elif choice1 == "s" or "S" :
+#     wordsearch()
+# else :
+#     print("Error.......choose a valid option ")
